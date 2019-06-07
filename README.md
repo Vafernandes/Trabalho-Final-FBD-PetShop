@@ -74,7 +74,6 @@ create trigger delelete_pet_venda_trigger
 create or replace function del_cliente_pet_func() returns trigger as $$
 	begin
 		delete from pet where cpf_dono = old.cpf;
-		delete from endereco where cpf_cliente = old.cpf;
 		return old;
 	end;
 $$ language 'plpgsql'
